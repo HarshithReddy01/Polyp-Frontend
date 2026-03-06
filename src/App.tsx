@@ -2,6 +2,22 @@ import { useRef, useState, useCallback, useEffect, DragEvent, ChangeEvent } from
 
 const API_BASE = "https://harshithreddy01-polyp-detection.hf.space";
 
+const BASE_URL = import.meta.env.BASE_URL;
+const SAMPLE_IMAGES = [
+  "cju1b0y2e396p08558ois175d.jpg",
+  "cju1b3zgj3d8e0801kpolea6c.jpg",
+  "cju1b75x63ddl0799sdp0i2j3.jpg",
+  "cju1bhnfitmge0835ynls0l6b.jpg",
+  "cju1bm8063nmh07996rsjjemq.jpg",
+  "cju1brhsj3rls0855a1vgdlen.jpg",
+  "cju1c0qb4tzi308355wtsnp0y.jpg",
+  "cju1c3218411b08014g9f6gig.jpg",
+  "cju1c4fcu40hl07992b8gj0c8.jpg",
+  "cju1c6yfz42md08550zgoz3pw.jpg",
+  "cju1c8ffau5770835g0g343o8.jpg",
+  "cju1cbokpuiw70988j4lq1fpi.jpg",
+];
+
 const ALLOWED_TYPES = ["image/jpeg", "image/jpg", "image/png"];
 const MAX_MB = 10;
 
@@ -201,6 +217,47 @@ export default function App() {
             <li><strong>Do not upload:</strong> regular photos, X-rays, CT scans, MRI, ultrasound, or screenshots</li>
             <li>Wrong uploads will be rejected — results on non-colonoscopy images are meaningless</li>
           </ul>
+        </div>
+
+        <div style={{
+          background: "#fff",
+          border: "1px solid var(--border)",
+          borderRadius: "var(--radius)",
+          padding: "16px 20px",
+        }}>
+          <div style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: 8 }}>
+            Download sample images to try the model
+          </div>
+          <div style={{ fontSize: "0.8rem", color: "var(--muted)", marginBottom: 12, lineHeight: 1.5 }}>
+            Use these colonoscopy samples below, then upload one above to run segmentation.
+          </div>
+          <div style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 8,
+          }}>
+            {SAMPLE_IMAGES.map((name, i) => (
+              <a
+                key={name}
+                href={`${BASE_URL}test-images/${name}`}
+                download={name}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  padding: "8px 14px",
+                  background: "var(--accent-light)",
+                  color: "var(--accent)",
+                  borderRadius: 8,
+                  fontSize: "0.8rem",
+                  fontWeight: 600,
+                  textDecoration: "none",
+                }}
+              >
+                Sample {i + 1}
+              </a>
+            ))}
+          </div>
         </div>
 
         <div>

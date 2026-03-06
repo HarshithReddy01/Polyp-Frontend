@@ -5,6 +5,7 @@ on:
     branches: [master]
     paths:
       - "src/**"
+      - "public/**"
       - "index.html"
       - "package.json"
       - "package-lock.json"
