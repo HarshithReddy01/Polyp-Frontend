@@ -17,12 +17,12 @@ const MODEL_INFO: Record<ModelName, { title: string; description: string }> = {
   "Kvasir-Seg": {
     title: "Kvasir-SEG",
     description:
-      "Trained on 1,000 annotated colonoscopy images covering a wide variety of polyp shapes, sizes, and textures. Best choice for general-purpose polyp detection in standard colonoscopy footage.",
+      "General-purpose. Works well across a wide range of polyp shapes and sizes. Use this as your default.",
   },
   "BKAI-IGH": {
     title: "BKAI-IGH",
     description:
-      "Trained on a clinically diverse dataset that distinguishes between neoplastic and non-neoplastic polyp categories. Recommended when finer discrimination between polyp types is needed.",
+      "Clinically focused. Better at telling apart different polyp types. Pick this when that distinction matters.",
   },
 };
 
