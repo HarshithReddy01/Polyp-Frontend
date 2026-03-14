@@ -43,7 +43,6 @@ Updated soon.
 The source code is free for research and education use only. Any comercial use should receive a formal permission from the first author.
 
 ## 7. Contact
-Please contact nikhilroxtomar@gmail.com for any further questions.
 
 **Harshith Reddy Nalla**
 - Email: harshithreddynalla01@gmail.com
